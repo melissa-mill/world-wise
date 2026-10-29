@@ -51,7 +51,8 @@ function Form() {
 
     fetchCityData();
   }, [lat, lng]);
-console.log(geocodingError);
+
+  if (!lat && !lng) return <Message message="Start by clicking on the map" />;
 
   if (geocodingError) return <Message message={"error"} />;
 
